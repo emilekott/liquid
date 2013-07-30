@@ -8,3 +8,107 @@ Template:       kula
 */
 
 @import url("../kula/style.css");
+#header-background{
+  background-color: #fff;
+  height: 73px;
+}
+
+#special-navigation[role="navigation"] {
+	font-size: 12px;
+	font-weight: 800;
+	margin-top: 22px;
+	text-transform: uppercase;
+}
+
+#special-navigation[role="navigation"] ul {
+	display: inline-block;
+	margin-bottom: 0;
+}
+
+#special-navigation[role="navigation"] li {
+	float: left;
+	margin-bottom: 0;
+	padding: 5px 0;
+	position: relative;
+}
+
+#special-navigation[role="navigation"] li a,
+#special-navigation[role="navigation"] li a:visited {
+	color: #000;
+	margin-right: 20px;
+	padding: 0;
+	text-decoration: none;
+	zoom: 1;
+}
+
+#special-navigation[role="navigation"] li a:hover,
+#special-navigation[role="navigation"] li a:focus {
+  text-decoration: underline;
+}
+
+nav select {
+	display: none;
+}
+
+
+
+/*vimeo embed */
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16/9 ratio */
+    padding-top: 9px; /* IE6 workaround*/
+    height: 0;
+    overflow: hidden;
+}
+
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#header-global[role="banner"] {
+  
+  padding-bottom: 0;
+}
+
+
+
+/*service columns */
+
+#services{
+  background: url('images/bg1.png') repeat;
+}
+
+.container .one-fifth.column { 
+	width: 172px; 
+}
+
+#services .service {
+border: none;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+margin-bottom: 0;
+padding: 15px;
+font-size: 14px;
+line-height: 24px;
+-moz-transition: all .4s;
+-webkit-transition: all .4s;
+-o-transition: all .4s;
+-ms-transition: all .4s;
+transition: all .4s;
+background-color: #fff;
+}
+
+
+
+/*top quotes*/
+.latest-quotes, .latest-quotes p, .latest-quotes h2, .latest-quotes h3{
+  color: #fff !important;
+}
