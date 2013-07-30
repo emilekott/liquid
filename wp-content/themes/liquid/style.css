@@ -1,0 +1,10 @@
+/*
+Theme Name:     Liquid
+Description:    Custom child theme for Liquid History
+Author:         Emile Kott
+Template:       kula
+
+(optional values you can add: Theme URI, Author URI, Version)
+*/
+
+@import url("../kula/style.css");
