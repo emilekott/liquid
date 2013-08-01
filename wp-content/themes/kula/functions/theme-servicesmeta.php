@@ -13,13 +13,7 @@ $meta_box_service = array(
     'context' => 'normal',
     'priority' => 'high',
     'fields' => array(
-        array(
-        	'name' => __('Service Icon', 'kula'),
-            'desc' => __('Add an Icon for your service via Shortcode <br />Example: [icon name=icon-file]<br /><br />A list of all available icons can be found <a href="http://fortawesome.github.com/Font-Awesome" target="_blank">here</a>', 'kula'),
-            'id' => $prefix . 'service_icon',
-            'type' => 'text',
-            'std' => ''
-        ),
+    
         array(
            'name' => __('Service URL', 'kula'),
            'desc' => __('Please add a page URL for this Service to link to', 'kula'),
