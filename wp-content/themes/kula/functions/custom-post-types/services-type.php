@@ -34,7 +34,7 @@ function services_register() {
         'hierarchical' => false,
         'rewrite' => false,
         'exclude_from_search' => true,
-        'supports' => array('title','editor')
+        'supports' => array('title','editor','thumbnail')
        );  
 
     register_post_type( 'services' , $args );
