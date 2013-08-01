@@ -84,7 +84,7 @@ function gt_queue_assets() {
   	wp_enqueue_script('contact-form');
   	wp_enqueue_script('form-validate');
   	wp_enqueue_script('respond');
-	wp_enqueue_script('custom-js-settings');
+    wp_enqueue_script('custom-js-settings');
 	
   // Enqueue Styles (Global)
   	wp_enqueue_style('options');

@@ -23,9 +23,9 @@ get_header();
 
               <div class="row">
 
-                <h1><?php echo $data['text_portfolio_title']; ?><span>.</span></h1>
+                <h1><?php echo $data['text_portfolio_title']; ?></h1>
 
-                <p><?php echo do_shortcode(stripslashes($data['textarea_portfolio_overview'])); ?></p>
+                <?php echo do_shortcode(stripslashes($data['textarea_portfolio_overview'])); ?>
 
               </div><!-- end .row -->
 
@@ -89,7 +89,7 @@ get_header();
 
                       </div><!-- end .one-third -->
 
-                    <?php
+                      <?php
                     endwhile;
                   endif;
                   ?>
@@ -126,7 +126,7 @@ get_header();
                     <?php
                     the_content();
                     $posttags = get_the_tags();
-
+                    $postID[] = get_the_id();
                     if ($posttags) {
                       $tagids = array();
 
@@ -134,6 +134,7 @@ get_header();
                         $tagids[] = $tag->term_id;
                       }
                     }
+                    
                     ?>
 
 
@@ -141,22 +142,29 @@ get_header();
                   <?php endwhile; ?>
                   <?php
                   //grab a random post based on posts
-                  
-                  if($posttags){
-                  wp_reset_query();
-                  $args = array('post_type' => 'post', 'posts_per_page' => 1,  'orderby' => 'rand', 'tag__in'=> $tagids );
-                  $loop = new WP_Query($args);
-                  while ($loop->have_posts()) : $loop->the_post();?>
-                    <h3><a href="<?php the_permalink(); ?>">DISCOVERABLE ELEMENT...</a></h3>
-                    <p>Click to discover automatic and randomly generated content from the website.</p>
-                  <?php
-                  endwhile;
+
+                  if ($posttags) {
+                    
+                    wp_reset_query();
+                    $args = array('post_type' => 'post', 'posts_per_page' => 1, 'orderby' => 'rand', 'tag__in' => $tagids, 'post__not_in' => $postID);
+                    $loop = new WP_Query($args);
+                    while ($loop->have_posts()) : $loop->the_post();
+                      ?>
+                    <div class="discover-icon">
+                      <a href="<?php the_permalink(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/discover.png" /></a>
+                    </div>
+                    <div class="discover-desc"><p class="discover"><a href="<?php the_permalink(); ?>">DISCOVERABLE ELEMENT...</a></p>
+                      <p>Click to discover automatic and randomly generated content from the website.</p>
+                    </div>
+                    <div class="clear"></div>
+                      <?php
+                    endwhile;
                   }
                   ?>
 
 
 
-           
+
 
 
 
@@ -189,21 +197,30 @@ get_header();
                 while ($loop->have_posts()) : $loop->the_post();
                   ?>
 
-                  <div class="service one-fifth column">
+                  <div class="service one-fifth column"><div class="service-inner">
 
-                    <?php echo do_shortcode(get_post_meta($post->ID, 'gt_service_icon', $single = true)) ?>
-
+                   
+                    <?php
+                    if (has_post_thumbnail()) {
+                      if (get_post_meta($post->ID, 'gt_service_url', true)) {
+                        echo '<a href='.get_post_meta($post->ID, 'gt_service_url', true).'>'.get_the_post_thumbnail($post->ID,'services-thumb').'</a>';
+                      }
+                      else{
+                        the_post_thumbnail('services-thumb');
+                      }
+                    }
+                    ?>
                     <h3><?php the_title(); ?></h3>
 
                     <?php the_content(); ?>
 
                     <?php if (get_post_meta($post->ID, 'gt_service_url', true)) { ?>
                       <a class="read-more-btn" href="<?php echo get_post_meta($post->ID, 'gt_service_url', true) ?>"><?php _e('Read more', 'kula'); ?> <span>&rarr;</span></a>
-                    <?php } ?>
-
+          <?php } ?>
+                    </div>
                   </div><!-- end .service -->
 
-                <?php endwhile; ?>
+        <?php endwhile; ?>
 
               </div><!-- end #all-services -->
 
@@ -239,7 +256,7 @@ get_header();
                       <li><a href="<?php echo $data['client_logo_four_url']; ?>"><img src="<?php echo $data['client_logo_four']; ?>" alt="" /></a></li>
                     <?php } if ($data["client_logo_five"]) { ?>
                       <li><a href="<?php echo $data['client_logo_five_url']; ?>"><img src="<?php echo $data['client_logo_five']; ?>" alt="" /></a></li>
-                    <?php } ?>	
+        <?php } ?>	
                   </ul>
 
                 </div><!-- end .logos -->
@@ -265,7 +282,7 @@ get_header();
                 <?php
                 global $data;
 
-                $args = array('post_type' => 'post', 'posts_per_page' => 1, 'cat'=>8);
+                $args = array('post_type' => 'post', 'posts_per_page' => 1, 'cat' => 8);
                 $loop = new WP_Query($args);
                 while ($loop->have_posts()) : $loop->the_post();
                   ?>
@@ -273,7 +290,7 @@ get_header();
                   <article class="article ">
 
                     <div class="thumbnail">
-                      <?php the_post_thumbnail('latest-news-thumb'); ?>
+          <?php the_post_thumbnail('latest-news-thumb'); ?>
                     </div>
 
                     <h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
@@ -281,9 +298,9 @@ get_header();
                     <div class="meta">
                       <span><?php _e('Posted in -', 'kula'); ?> <?php the_category(' & '); ?><br />on <strong><?php the_time('F jS, Y'); ?></strong></span>
                       <span><i class="icon-comment"></i> <a href="<?php the_permalink(); ?>#comments"><?php
-            $commentscount = get_comments_number();
-            echo $commentscount;
-            ?> <?php _e('Comments', 'kula'); ?></a></span>
+                $commentscount = get_comments_number();
+                echo $commentscount;
+                ?> <?php _e('Comments', 'kula'); ?></a></span>
                     </div>
 
           <?php the_excerpt(); ?>
