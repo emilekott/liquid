@@ -118,7 +118,7 @@ get_header();
                 <section class="latest-quotes">
 
                   <?php
-                  $args = array('post_type' => 'post', 'posts_per_page' => 1, 'orderby' => 'rand');
+                  $args = array('post_type' => 'post', 'posts_per_page' => 1, 'cat' => -8);
                   $loop = new WP_Query($args);
                   while ($loop->have_posts()) : $loop->the_post();
                     ?>

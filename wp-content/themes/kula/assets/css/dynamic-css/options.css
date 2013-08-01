@@ -1,23 +1,23 @@
 /*---------------------- Body --------------------------*/
 
 .header-background-image {
-	background: url(http://localhost:8888/kula-local-wp/wp-content/uploads/2013/04/header_background_placeholder.jpg) top center no-repeat;
+	background: url() top center no-repeat;
 }
 
 .header-background-image-inner {
-	background: url(http://localhost:8888/kula-local-wp/wp-content/uploads/2013/04/header_background_placeholder.jpg) top center no-repeat;
+	background: url() top center no-repeat;
 }
 
 .bg1 {
-	background: url(http://localhost:8888/kula-local-wp/wp-content/uploads/2013/04/background_placeholder.jpg) top center no-repeat;
+	background: url(http://localhost:8888/liquid-history/wp-content/uploads/2013/07/quotes-top.jpg) top center no-repeat;
 }
 
 .bg2 {
-	background: url(http://localhost:8888/kula-local-wp/wp-content/uploads/2013/04/background_placeholder.jpg) top center no-repeat;
+	background: url() top center no-repeat;
 }
 
 .bg3 {
-	background: url(http://localhost:8888/kula-local-wp/wp-content/uploads/2013/04/background_placeholder.jpg) top center no-repeat;
+	background: url(http://localhost:8888/liquid-history/wp-content/uploads/2013/07/quotes-bottom1.jpg) top center no-repeat;
 }
 
 body p,
@@ -51,7 +51,7 @@ ul.tabs-content,
 #uber-statement {
 	color: #ffffff;
 	font-family: open sans;
-	font-size: 16px;
+	font-size: ;
 	font-style: 800;
 	font-weight: 800;
 }

@@ -8,15 +8,20 @@ Template:       kula
 */
 
 @import url("../kula/style.css");
+.logo-icons.container{
+  width: 1130px;
+}
+
+
 #header-background{
   background-color: #fff;
-  height: 73px;
+  height: 83px;
 }
 
 #special-navigation[role="navigation"] {
 	font-size: 12px;
 	font-weight: 800;
-	margin-top: 22px;
+	margin-top: 28px;
 	text-transform: uppercase;
 }
 
@@ -35,7 +40,7 @@ Template:       kula
 #special-navigation[role="navigation"] li a,
 #special-navigation[role="navigation"] li a:visited {
 	color: #000;
-	margin-right: 20px;
+	margin-right: 35px;
 	padding: 0;
 	text-decoration: none;
 	zoom: 1;
@@ -111,4 +116,18 @@ background-color: #fff;
 /*top quotes*/
 .latest-quotes, .latest-quotes p, .latest-quotes h2, .latest-quotes h3{
   color: #fff !important;
+}
+
+
+
+
+/*footer main*/
+#footer-main{
+
+padding: 10px 0;
+position: relative;
+z-index: 300;
+-webkit-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .9);
+box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .9);
+border-top: 10px solid #000;
 }

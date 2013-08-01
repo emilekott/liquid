@@ -51,7 +51,7 @@ else { ?>
 
           <div class="row">
 
-            <div class="header-logo two columns">
+            <div class="header-logo three columns">
 
               <?php if ($data['text_logo']) { ?>
                 <div id="logo-default"><a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></div>
@@ -62,7 +62,7 @@ else { ?>
 
             </div><!-- end .header-logo -->
 
-            <div id="special-navigation" class="fourteen columns" role="navigation">
+            <div id="special-navigation" class="fifteen columns" role="navigation">
               <?php if (is_front_page()) { ?>
 
                 <?php
