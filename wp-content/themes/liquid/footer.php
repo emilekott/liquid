@@ -22,7 +22,7 @@ function scrollTo(target) {
     }, 'slow');
 }
 jQuery(document).ready(function () {
-    jQuery('nav ul').mobileMenu({
+    jQuery('ul#navigation').mobileMenu({
         defaultText: '<?php _e("Navigation", "kula");?>',
         className: 'mobile-menu',
         subMenuDash: '&ndash;'

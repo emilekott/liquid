@@ -81,7 +81,7 @@ if ($layout):
             <?php the_post_thumbnail('portfolio-thumb'); ?>
                             <div class="overlay">
                               <div class="details">
-                                <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?><span>.</span></a></h2>
+                                <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
                               </div>
                             </div>
                           </div><!-- end .project-image -->
@@ -123,9 +123,9 @@ if ($layout):
         $loop = new WP_Query($args);
         while ($loop->have_posts()) : $loop->the_post();
           ?>
-                    <h2><?php the_title(); ?></h2>
+                    <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
                     <?php
-                    the_content();
+                    the_content("Read more.");
                     $posttags = get_the_tags();
                     $postID[] = get_the_id();
                     if ($posttags) {
@@ -205,19 +205,23 @@ if ($layout):
           if (has_post_thumbnail()) {
             if (get_post_meta($post->ID, 'gt_service_url', true)) {
               echo '<a href=' . get_post_meta($post->ID, 'gt_service_url', true) . '>' . get_the_post_thumbnail($post->ID, 'services-thumb') . '</a>';
+              echo '<h3><a href=' . get_post_meta($post->ID, 'gt_service_url', true) . '>' . get_the_title() . '</a></h3>';
+                
             }
             else {
               the_post_thumbnail('services-thumb');
+              ?>
+                <h3><?php the_title(); ?></h3>
+              <?php
+              
             }
           }
           ?>
-                      <h3><?php the_title(); ?></h3>
+                      
 
                       <?php the_content(); ?>
 
-          <?php if (get_post_meta($post->ID, 'gt_service_url', true)) { ?>
-                        <a class="read-more-btn" href="<?php echo get_post_meta($post->ID, 'gt_service_url', true) ?>"><?php _e('Read more', 'kula'); ?> <span>&rarr;</span></a>
-                      <?php } ?>
+         
                     </div>
                   </div><!-- end .service -->
 
@@ -283,7 +287,7 @@ if ($layout):
         <?php
         global $data;
 
-        $args = array('post_type' => 'post', 'posts_per_page' => 1, 'cat' => 8, 'post__not_in' => $postID);
+        $args = array('post_type' => 'post', 'posts_per_page' => 1, 'post__not_in' => $postID);
         $loop = new WP_Query($args);
         while ($loop->have_posts()) : $loop->the_post();
           $postID[] = get_the_id();
@@ -367,7 +371,7 @@ if ($layout):
 
         <?php
 
-        $args = array('post_type' => 'post', 'posts_per_page' => 1, 'cat' => 8, 'post__not_in' => $postID);
+        $args = array('post_type' => 'post', 'posts_per_page' => 1, 'post__not_in' => $postID);
         $loop = new WP_Query($args);
         while ($loop->have_posts()) : $loop->the_post();
           $postID[] = get_the_id();

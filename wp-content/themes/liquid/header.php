@@ -113,6 +113,7 @@ echo $data['custom_favicon'];
 
 
       <?php if (is_front_page()) { ?>
+      
         <?php
         $args = array('page_id' => 21);
         $loop = new WP_Query($args);

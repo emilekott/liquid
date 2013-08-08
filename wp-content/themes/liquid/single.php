@@ -5,7 +5,9 @@
  *
  */
 
-get_header(); ?>
+get_header(); 
+
+?>
 
 	<div id="main">
 			
@@ -18,16 +20,22 @@ get_header(); ?>
 					<section id="post-content" class="sixteen columns alpha">
 										
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					
-						<article>
+            <?php
+              $cats = get_the_category(get_the_id());
+              foreach ($cats As $cat){
+                $cat_list = $cat_list. " " . $cat->slug;
+              }
+              
+              ?>
+						<article class="<?php echo $cat_list; ?>">
 											
 							<h1><?php the_title(); ?></h1>
               
               
 							
-							<span class="meta-author">By <?php the_author_posts_link(); ?></span>
+							<span class="meta-author">made by <?php the_author_posts_link(); ?></span>
 							
-							<span class="meta-category"><?php _e('Posted in', 'kula'); ?> - <?php the_category(' & '); ?> <?php _e('on', 'kula'); ?> <strong><?php the_time('F jS, Y'); ?></strong></span>
+							<span class="meta-category"><?php _e('posted in', 'kula'); ?> - <?php the_category(' & '); ?> <?php _e('on', 'kula'); ?> <strong><?php the_time('F jS, Y'); ?></strong></span>
 	
 							<?php the_post_thumbnail('featured-news'); ?>
 							

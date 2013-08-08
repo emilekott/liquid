@@ -7,6 +7,8 @@ Template:       kula
 (optional values you can add: Theme URI, Author URI, Version)
 */
 
+
+
 @import url("../kula/style.css");
 body p,
 .accordion-content,
@@ -20,7 +22,13 @@ ul.tabs-content,
 
   font-family: "futura-pt",sans-serif !important;
   line-height: 20px;
+  font-family: "futura-pt",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
 
+section a:hover{
+  color: #ccc !important;
 }
 
 #main h1, #main h2, #main h3, #main h4, #main h5, #main h6, #footer-global h1, #single-project h1, #single-project h2, #single-project h3, #single-project h4, #single-project h5, #single-project h6, #sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4, #sidebar h5, #sidebar h6, .project-item .project-details h2, #comments h4, .comment .author, #respond h3, .project-item .overlay h2, #services h2, #meet-the-team h2, h2.post-title a, #content p.trigger a, ul.tabs li a, #latest-news article h2 a, .must-log-in, .logged-in-as {
@@ -143,14 +151,14 @@ nav select {
   background: url('images/bg1.png') repeat;
 
 
-padding: 70px 0;
-position: relative;
-z-index: 300;
--webkit-box-shadow: 0px 3px 5px rgba(176, 25, 124, 0.3);
--moz-box-shadow:    0px 3px 5px rgba(176, 25, 124, 0.3);
-box-shadow:         0px 3px 5px rgba(176, 25, 124, 0.3);
-border-top: 20px solid #A7006E;
-border-bottom: 20px solid #FF014F;
+  padding: 70px 0;
+  position: relative;
+  z-index: 300;
+  -webkit-box-shadow: 0px 3px 5px rgba(176, 25, 124, 0.3);
+  -moz-box-shadow:    0px 3px 5px rgba(176, 25, 124, 0.3);
+  box-shadow:         0px 3px 5px rgba(176, 25, 124, 0.3);
+  border-top: 15px solid #A7006E;
+  border-bottom: 15px solid #FF014F;
 
 }
 
@@ -167,6 +175,9 @@ border-bottom: 20px solid #FF014F;
   line-height: 17px;
   margin-bottom: 20px;
   font-family: "futura-pt",sans-serif;
+}
+.service h3 a{
+  color: #333;
 }
 
 .service p{
@@ -185,7 +196,7 @@ border-bottom: 20px solid #FF014F;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  margin-bottom: 0;
+  margin-bottom: 15px;
   padding: 15px;
   font-size: 14px;
   line-height: 24px;
@@ -201,20 +212,32 @@ border-bottom: 20px solid #FF014F;
 
 
 /*top quotes*/
-.latest-quotes, .latest-quotes p, .latest-quotes h2, .latest-quotes h3{
+.latest-quotes, .latest-quotes p, .latest-quotes h1, .latest-quotes h2, .latest-quotes h3{
   color: #fff !important;
   text-shadow: 1px 1px 1px #000;
-filter: dropshadow(color=#000, offx=1, offy=1);
+  filter: dropshadow(color=#000, offx=1, offy=1);
 
 }
+
+.latest-quotes h2 a, .latest-quotes h1 a{
+  color: #fff;
+}
+
+.latest-quotes h1{
+  font-size: 55px;
+  line-height: 54px;
+  border: none;
+}
+
 
 .latest-quotes h3{
   text-transform: none;
   font-weight: normal !important;
 }
 
-.latest-quotes a{
+.latest-quotes a{ /*@todo */
   color: #ff0066;
+  font-weight: bold;
 }
 
 .latest-quotes a:hover{
@@ -239,22 +262,22 @@ p.discover{
 
 p.discover a{
   color: #fff;
-  
+
 }
 
 
 /*"latest-work"*/
 #latest-work {
 
--webkit-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .9);
-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .9);
-border-top: 15px solid #E80FB7;
-border-bottom: 15px solid #E80FB7;
+  -webkit-box-shadow:none;
+  box-shadow: none;
+  border-top: 15px solid #E80FB7;
+  border-bottom: 15px solid #E80FB7;
 
 }
 
 #latest-work h1{
-  font-size: 66px;
+  font-size: 55px;
   line-height: 54px;
   border: none;
 }
@@ -278,15 +301,16 @@ h4.filter-title{
 
 #filter{
   margin-top: 3px;
-margin-left: 25px;
+  margin-left: 25px;
 }
 
 #portfolio-items{
   margin-top: 20px;
 }
 
-#latest-work .row a{
-   color: #E80FB7;
+#latest-work .row a{ /*@todo */
+  color: #E80FB7;
+  font-weight: bold;
 }
 #latest-work .row a:hover{
   color: #cccccc;
@@ -295,7 +319,11 @@ margin-left: 25px;
 
 #latest-work .row h3{
   text-transform: none;
-  font-weight: normal !important;
+  font-weight: 800;
+}
+
+.project-item .overlay h2, .project-item .overlay h2:hover  {
+  border: none;
 }
 
 
@@ -303,19 +331,22 @@ margin-left: 25px;
 #latest-news{
   border-top: 0;
   border-bottom: 15px solid #F8FE4F;
+  -webkit-box-shadow:none;
+  box-shadow: none;
 }
 
-#articles .article{
+#articles .article{ 
   border: none;
   border-radius: 0;
   padding:0;
+  
 }
 
 #latest-news h1{
   font-size: 55px;
   line-height: 51px;
   border: none;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 #latest-news h1 a{
@@ -327,8 +358,9 @@ margin-left: 25px;
 }
 
 
-#articles .article .content a{
-   color: #E80FB7;
+#articles .article .content a{ /*@todo */
+  color: #E80FB7;
+  font-weight: bold;
 }
 #articles .article .content a:hover{
   color: #cccccc;
@@ -353,7 +385,7 @@ margin-left: 25px;
 
 
 .latest-quotes li {
-padding: 0;
+  padding: 0;
 }
 
 .latest-quotes cite{
@@ -369,17 +401,21 @@ padding: 0;
 
 
 /*meet the team*/
-#meet-the-team {
-
-padding: 40px 0;
-
-border-top: 15px solid #6AEFFF;
-border-bottom: 15px solid #6AEFFF;
-box-shadow: none;
--webkit-box-shadow: none;
+#meet-the-team a{
+  color: #6AEFFF;
 }
 
-#meet-the-team a{
+#meet-the-team {
+
+  padding: 40px 0;
+
+  border-top: 15px solid #6AEFFF;
+  border-bottom: 15px solid #6AEFFF;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+#meet-the-team #articles .article .content a {
   color: #6AEFFF;
 }
 
@@ -392,7 +428,7 @@ box-shadow: none;
   line-height: 51px;
   border: none;
 
- 
+
 }
 
 #meet-the-team  h1 a{
@@ -413,7 +449,7 @@ box-shadow: none;
   box-shadow: none;
   border-top: none;
   font-size: 13px;
-font-weight: 800;
+  font-weight: 800;
 }
 
 #footer-main .row{
@@ -427,18 +463,117 @@ font-weight: 800;
 /*post page */
 #content img {
 
-border: none;
--webkit-border-radius: 0;
--moz-border-radius: 0;
-border-radius: 0;
-margin-bottom: 20px;
--webkit-box-sizing: content-box;
--moz-box-sizing: content-box;
-box-sizing: content-box;
-overflow: visible;
--moz-transition: all .4s;
--webkit-transition: all .4s;
--o-transition: all .4s;
--ms-transition: all .4s;
-transition: all .4s;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  margin-bottom: 20px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  overflow: visible;
+  -moz-transition: all .4s;
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
+  -ms-transition: all .4s;
+  transition: all .4s;
 }
+
+
+.single-post h1, .single h1, .archive h1{
+  font-family: "futura-pt",sans-serif !important;
+  font-size: 55px;
+  line-height: 54px;
+  border: none !important;
+}
+
+.single-post h3{
+  font-size: 16px;
+  line-height: 17px;
+  margin-bottom: 20px;
+  font-family: "futura-pt",sans-serif;
+  text-transform: none;
+}
+
+.single-post .meta-author, .archive .meta-author{
+  border: none;
+}
+
+.single-post .architechting-and-distilling a,
+article.category-architechting-and-distilling a{
+  color: #F8FE4F !important;
+  font-weight: bold;
+}
+
+.single-post .fractured-identities a,
+article.category-fractured-identities a{
+  color: #FF014F !important;
+  font-weight: bold;
+}
+
+.single-post .living-in-the-layers a, .single article a, .project-nav .back a,
+article.category-living-in-the-layers a{
+  color: #A7006E !important;
+  font-weight: bold;
+}
+
+.expand, .plan-price, ul.tabs li a.active, ul.tabs li a:hover, .pagination .prev:hover, .pagination .next:hover, .pager a:hover {
+background-color: #CCC !important;
+color: #A7006E !important;
+}
+
+.single-post .segue a,
+article.category-segue a{
+ 
+  color: #E80FB7 !important;
+  font-weight: bold;
+}
+
+.single-post .studios-of-imagination a{
+  color: #6AEFFF !important;
+  font-weight: bold;
+}
+
+.meta-category {
+display: block;
+font-style: normal;
+margin-top: 10px;
+padding-bottom: 20px;
+}
+
+
+.meta-category a:hover {
+
+font-family: "futura-pt",sans-serif !important;
+}
+
+.meta-category strong{
+  font-weight: normal;
+}
+
+a.read-more-btn, a.read-more-btn:hover{
+  border:none;
+}
+
+
+/*responsive header */
+#special-navigation select{
+  display: none;
+}
+
+
+@media only screen and (max-width: 1040px){
+  #special-navigation ul#navigation {
+    display: none;
+  }
+
+  #special-navigation select {
+    display: inline-block;
+    position: relative;
+    color: #000;
+    font-style: normal;
+    margin-top: 4px;
+  }
+}
+
+
